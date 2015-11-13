@@ -1,0 +1,310 @@
+
+zhangchao@PEK1-6TYMW22 MINGW64 /d/git/learngit (master)
+$ git push -u rr master
+To git@github.com:brozx2015/brozx.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'git@github.com:brozx2015/brozx.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+zhangchao@PEK1-6TYMW22 MINGW64 /d/git/learngit (master)
+$ git remote -v
+brozx   git@github.com:T-K2015/learngit.git (fetch)
+brozx   git@github.com:T-K2015/learngit.git (push)
+origin  git@github.com:T-K2015/learngit.git (fetch)
+origin  git@github.com:T-K2015/learngit.git (push)
+rr      git@github.com:brozx2015/brozx.git (fetch)
+rr      git@github.com:brozx2015/brozx.git (push)
+
+zhangchao@PEK1-6TYMW22 MINGW64 /d/git/learngit (master)
+$ git push -u rr master -f
+Counting objects: 31, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (24/24), done.
+Writing objects: 100% (31/31), 2.45 KiB | 0 bytes/s, done.
+Total 31 (delta 8), reused 0 (delta 0)
+To git@github.com:brozx2015/brozx.git
+ + 2f3c207...1000256 master -> master (forced update)
+Branch master set up to track remote branch master from rr.
+
+zhangchao@PEK1-6TYMW22 MINGW64 /d/git/learngit (master)
+$ git status
+On branch master
+Your branch is up-to-date with 'rr/master'.
+nothing to commit, working directory clean
+
+
+zhangchao@PEK1-6TYMW22 MINGW64 /d/git/learngit (master)
+$ git push rr master
+Everything up-to-date
+
+zhangchao@PEK1-6TYMW22 MINGW64 /d/git/learngit (master)
+$ vi ww.txt
+
+zhangchao@PEK1-6TYMW22 MINGW64 /d/git/learngit (master)
+$ git add ww.txt
+
+zhangchao@PEK1-6TYMW22 MINGW64 /d/git/learngit (master)
+$ git commit -m "test"
+[master 547fb72] test
+ 1 file changed, 5 insertions(+)
+
+zhangchao@PEK1-6TYMW22 MINGW64 /d/git/learngit (master)
+$ git push rr master
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 261 bytes | 0 bytes/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+To git@github.com:brozx2015/brozx.git
+   1000256..547fb72  master -> master
+
+zhangchao@PEK1-6TYMW22 MINGW64 /d/git/learngit (master)
+$ vi myname.txt
+
+zhangchao@PEK1-6TYMW22 MINGW64 /d/git/learngit (master)
+$ git push rr master
+Everything up-to-date
+
+zhangchao@PEK1-6TYMW22 MINGW64 /d/git/learngit (master)
+$ git add ww.txt
+
+zhangchao@PEK1-6TYMW22 MINGW64 /d/git/learngit (master)
+$ git push rr master
+Everything up-to-date
+
+zhangchao@PEK1-6TYMW22 MINGW64 /d/git/learngit (master)
+$ git commit -m "test github myname"
+On branch master
+Your branch is up-to-date with 'rr/master'.
+Changes not staged for commit:
+        modified:   myname.txt
+
+no changes added to commit
+
+zhangchao@PEK1-6TYMW22 MINGW64 /d/git/learngit (master)
+$ git push rr master
+Everything up-to-date
+
+zhangchao@PEK1-6TYMW22 MINGW64 /d/git/learngit (master)
+$ git status
+On branch master
+Your branch is up-to-date with 'rr/master'.
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   myname.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+zhangchao@PEK1-6TYMW22 MINGW64 /d/git/learngit (master)
+$ git commit -m "test github myname"
+On branch master
+Your branch is up-to-date with 'rr/master'.
+Changes not staged for commit:
+        modified:   myname.txt
+
+no changes added to commit
+
+zhangchao@PEK1-6TYMW22 MINGW64 /d/git/learngit (master)
+$ git add myname.txt myname.txt myname.txt
+
+zhangchao@PEK1-6TYMW22 MINGW64 /d/git/learngit (master)
+$ git add myname.txt
+
+zhangchao@PEK1-6TYMW22 MINGW64 /d/git/learngit (master)
+$ git commit -m "test github myname"
+[master 4878694] test github myname
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+zhangchao@PEK1-6TYMW22 MINGW64 /d/git/learngit (master)
+$ git push rr master
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 290 bytes | 0 bytes/s, done.
+Total 3 (delta 2), reused 0 (delta 0)
+To git@github.com:brozx2015/brozx.git
+   547fb72..4878694  master -> master
+
+zhangchao@PEK1-6TYMW22 MINGW64 /d/git/learngit (master)
+$ ^C
+
+zhangchao@PEK1-6TYMW22 MINGW64 /d/git/learngit (master)
+$ zhangchao@PEK1-6TYMW22 MINGW64 ~
+$ cd git
+bash: cd: git: No such file or directory
+
+zhangchao@PEK1-6TYMW22 MINGW64 ~
+$ cd d:/git
+
+zhangchao@PEK1-6TYMW22 MINGW64 /d/git
+$ cd l
+bash: cd: l: No such file or directory
+
+zhangchao@PEK1-6TYMW22 MINGW64 /d/git
+$ cd learngit/
+
+zhangchao@PEK1-6TYMW22 MINGW64 /d/git/learngit (master)
+$ git remote -v
+brozx   git@github.com:T-K2015/learngit.git (fetch)
+brozx   git@github.com:T-K2015/learngit.git (push)
+origin  git@github.com:T-K2015/learngit.git (fetch)
+origin  git@github.com:T-K2015/learngit.git (push)
+rr      git@github.com:brozx2015/brozx.git (fetch)
+rr      git@github.com:brozx2015/brozx.git (push)
+
+zhangchao@PEK1-6TYMW22 MINGW64 /d/git/learngit (master)
+$ git push -u rr master
+To git@github.com:brozx2015/brozx.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'git@github.com:brozx2015/brozx.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+zhangchao@PEK1-6TYMW22 MINGW64 /d/git/learngit (master)
+$ git push -u rr master
+To git@github.com:brozx2015/brozx.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'git@github.com:brozx2015/brozx.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+zhangchao@PEK1-6TYMW22 MINGW64 /d/git/learngit (master)
+$ git push -u rr master
+To git@github.com:brozx2015/brozx.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'git@github.com:brozx2015/brozx.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+zhangchao@PEK1-6TYMW22 MINGW64 /d/git/learngit (master)
+$ git push --help
+Launching default browser to display HTML ...
+
+zhangchao@PEK1-6TYMW22 MINGW64 /d/git/learngit (master)
+$ git remote -v
+brozx   git@github.com:T-K2015/learngit.git (fetch)
+brozx   git@github.com:T-K2015/learngit.git (push)
+origin  git@github.com:T-K2015/learngit.git (fetch)
+origin  git@github.com:T-K2015/learngit.git (push)
+rr      git@github.com:brozx2015/brozx.git (fetch)
+rr      git@github.com:brozx2015/brozx.git (push)
+
+zhangchao@PEK1-6TYMW22 MINGW64 /d/git/learngit (master)
+$ git fetch brozx
+ERROR: Repository not found.
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+zhangchao@PEK1-6TYMW22 MINGW64 /d/git/learngit (master)
+$ git remote remove git@github.com:T-K2015/learngit.git
+error: Could not remove config section 'remote.git@github.com:T-K2015/learngit.git'
+
+zhangchao@PEK1-6TYMW22 MINGW64 /d/git/learngit (master)
+$ git remote remove git@github.com:brozx2015/brozx.git
+error: Could not remove config section 'remote.git@github.com:brozx2015/brozx.git'
+
+zhangchao@PEK1-6TYMW22 MINGW64 /d/git/learngit (master)
+$ git remote remove rr git@github.com:brozx2015/brozx.git
+usage: git remote remove <name>
+
+
+
+zhangchao@PEK1-6TYMW22 MINGW64 /d/git/learngit (master)
+$ git remote -v
+brozx   git@github.com:T-K2015/learngit.git (fetch)
+brozx   git@github.com:T-K2015/learngit.git (push)
+origin  git@github.com:T-K2015/learngit.git (fetch)
+origin  git@github.com:T-K2015/learngit.git (push)
+rr      git@github.com:brozx2015/brozx.git (fetch)
+rr      git@github.com:brozx2015/brozx.git (push)
+
+zhangchao@PEK1-6TYMW22 MINGW64 /d/git/learngit (master)
+$ git push rr master
+To git@github.com:brozx2015/brozx.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'git@github.com:brozx2015/brozx.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+zhangchao@PEK1-6TYMW22 MINGW64 /d/git/learngit (master)
+$ git push -u rr master -f
+Counting objects: 31, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (24/24), done.
+Writing objects: 100% (31/31), 2.45 KiB | 0 bytes/s, done.
+Total 31 (delta 8), reused 0 (delta 0)
+To git@github.com:brozx2015/brozx.git
+ + 2f3c207...1000256 master -> master (forced update)
+Branch master set up to track remote branch master from rr.
+
+zhangchao@PEK1-6TYMW22 MINGW64 /d/git/learngit (master)
+$ git status
+On branch master
+Your branch is up-to-date with 'rr/master'.
+nothing to commit, working directory clean
+
+zhangchao@PEK1-6TYMW22 MINGW64 /d/git/learngit (master)
+$ git push -u rr master
+Branch master set up to track remote branch master from rr.
+Everything up-to-date
+
+zhangchao@PEK1-6TYMW22 MINGW64 /d/git/learngit (master)
+$ git push rr master
+Everything up-to-date
+
+zhangchao@PEK1-6TYMW22 MINGW64 /d/git/learngit (master)
+$ vi ww.txt
+
+zhangchao@PEK1-6TYMW22 MINGW64 /d/git/learngit (master)
+$ git add ww.txt
+
+zhangchao@PEK1-6TYMW22 MINGW64 /d/git/learngit (master)
+$ git commit -m "test"
+[master 547fb72] test
+ 1 file changed, 5 insertions(+)
+
+zhangchao@PEK1-6TYMW22 MINGW64 /d/git/learngit (master)
+$ git push rr master
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 261 bytes | 0 bytes/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+To git@github.com:brozx2015/brozx.git
+   1000256..547fb72  master -> master
+
+zhangchao@PEK1-6TYMW22 MINGW64 /d/git/learngit (master)
+$ vi myname.txt
+
+zhangchao@PEK1-6TYMW22 MINGW64 /d/git/learngit (master)
+$ git push rr master
+Everything up-to-date
+
+zhangchao@PEK1-6TYMW22 MINGW64 /d/git/learngit (master)
+$ git add ww.txt
+
+zhangchao@PEK1-6TYMW22 MINGW64 /d/git/learngit (master)
+$ git push rr master
+Everything up-to-date
+
+
